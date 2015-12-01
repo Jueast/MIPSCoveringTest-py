@@ -163,8 +163,8 @@ class TestCode(object):
              prevP[hazardPReg] = "$1"
              for reg in hazardNRegs:
                  nextP[reg] = "$1"
-             if nextIns.getInstype == store:
-                 nextP['']
+             if nextIns.getInstype() == store:
+                 nextP['base'] = "$0"
              if prevIns.getInstype() == link:
                  for reg in hazardNRegs:
                      nextP[reg] = "$ra"
