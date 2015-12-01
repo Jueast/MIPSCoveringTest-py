@@ -163,6 +163,8 @@ class TestCode(object):
              prevP[hazardPReg] = "$1"
              for reg in hazardNRegs:
                  nextP[reg] = "$1"
+             if nextIns.getInstype == store:
+                 nextP['']
              if prevIns.getInstype() == link:
                  for reg in hazardNRegs:
                      nextP[reg] = "$ra"
@@ -188,6 +190,7 @@ class TestCode(object):
          block{index}:
              {inss}
              jr $ra
+             nop
          exit{index}:
          """
 
@@ -200,7 +203,6 @@ class TestCode(object):
         return "nop" + newline
     def getText(self):
         return self.text
-
 
 if __name__ == '__main__':
     code = open("test.asm", "w")
