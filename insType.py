@@ -16,7 +16,7 @@ load =  {"use":{'rs':1},
                }
         }
 
-store = {"use":{'rs':1, 'rt':2},
+store = {"use":{'base':1, 'rt':2},
          "new":{}
         }
 
@@ -27,6 +27,7 @@ b_type = {"use":{'rs':0, 'rt':0},
          "new":{}
         }
 link = {"use":{},
-        "new":{'$ra':0}}
+        "new":{'E':{'$ra':0},
+               'M':{'$ra':0}}}
 j_o = {"use":{},
      "new":{}}
